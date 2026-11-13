@@ -40,7 +40,7 @@ Una regla es **buena** frente a otra si baja el coste total con toda la banda de
 bajar el fill rate (unidades servidas entre unidades pedidas). Si la mediana baja pero la banda cruza el cero, no se
 puede afirmar.
 
-## En 2024, orientativo
+## La comparación orientativa de 2024
 
 Con el stock de seguridad fijado con 2024, la regla con previsión baja el coste del año frente a la actual en 164 € en
 A, 5.972 € en B y 67.239 € en C (medianas). La regla corregida da casi lo mismo: 147 €, 5.941 € y 67.128 €. Es
@@ -58,4 +58,4 @@ orientativo porque el stock de seguridad se calculó con ese mismo año; la medi
   mediana.
 - El criterio que compara producto a producto tiene un hueco: si la regla con previsión es buena frente a la actual,
   no se puede afirmar que mejore a la corregida y la corregida no es buena frente a la actual, elige la actual. No
-  ocurre con estos datos, y el sistema no depende de él: usa la regla con previsión en todos los productos.
+  ocurre con estos datos. El sistema tampoco depende de él, porque usa la regla con previsión en todos los productos.

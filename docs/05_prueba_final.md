@@ -15,7 +15,7 @@ con 2023 y 2024. Enero a junio de 2025 no se usó para nada de eso.
 - **Criterio, producto a producto:** la regla con previsión si es buena frente a la actual y frente a la corregida; si
   no, la corregida si es buena frente a la actual; si no, la actual.
 
-## Antes de comparar, la reproducción
+## La reproducción antes de comparar
 
 Con la regla actual y los plazos reales de 2025, el simulador da lo que registró el sistema en los 181 días de los tres
 productos. Su coste del semestre, 40.707 €, es lo que costó de verdad.

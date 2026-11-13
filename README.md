@@ -90,7 +90,7 @@ la regla (el modelo, el stock de seguridad y el objetivo de cada producto) estab
 
 ## Datos y licencia
 
-Los datos son sintéticos: recogen tres productos de un almacén, de enero de 2023 a junio de 2025, y no hay ninguna
+Los datos son sintéticos: recogen tres productos de un almacén, de enero de 2023 a junio de 2025. No hay ninguna
 empresa real detrás.
 
 El código y los datos se publican con licencia [MIT](LICENSE).

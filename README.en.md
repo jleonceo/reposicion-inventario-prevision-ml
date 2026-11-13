@@ -91,7 +91,7 @@ uses (the model, the safety stock and each product's target) was fixed beforehan
 
 ## Data and licence
 
-The data is synthetic: it covers three products in a warehouse, from January 2023 to June 2025, and there is no real
+The data is synthetic: it covers three products in a warehouse, from January 2023 to June 2025. There is no real
 company behind it.
 
 The code and the data are published under the [MIT](LICENSE) licence.
