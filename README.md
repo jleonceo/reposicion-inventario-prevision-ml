@@ -38,14 +38,14 @@ durante el plazo de entrega más el stock de seguridad. Después lo compara con 
 camino. Si el stock está en ese punto o por debajo, pide la cantidad fija del producto.
 
 ```mermaid
-flowchart TD
-    H[Ventas históricas] --> L[Previsión de demanda<br/>un modelo Lasso por producto]
-    PL[Plazos reales de entrega] --> SS[Stock de seguridad]
-    L --> PP[Punto de pedido<br/>demanda en el plazo más stock de seguridad]
+flowchart LR
+    H[Ventas<br/>históricas] --> L[Previsión de demanda<br/>un modelo Lasso<br/>por producto]
+    PL[Plazos reales<br/>de entrega] --> SS[Stock de<br/>seguridad]
+    L --> PP[Punto de pedido<br/>demanda en el plazo<br/>más stock de seguridad]
     SS --> PP
-    ST[Stock más lo que viene en camino] --> C{¿Está en el punto<br/>de pedido o por debajo?}
+    ST[Stock más lo que<br/>viene en camino] --> C{¿Está en el punto<br/>de pedido o por debajo?}
     PP --> C
-    C -->|Sí| PE[Pide la cantidad fija]
+    C -->|Sí| PE[Pide la<br/>cantidad fija]
     C -->|No| NO[No pide]
     style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style PE fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20

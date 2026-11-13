@@ -38,14 +38,14 @@ forecasts over the lead time plus the safety stock. It then compares it with the
 way. If the stock is at that point or below it, the process orders the product's fixed quantity.
 
 ```mermaid
-flowchart TD
-    H[Sales history] --> L[Demand forecast<br/>one Lasso model per product]
-    PL[Actual delivery lead times] --> SS[Safety stock]
-    L --> PP[Reorder point<br/>demand over the lead time plus safety stock]
+flowchart LR
+    H[Sales<br/>history] --> L[Demand forecast<br/>one Lasso model<br/>per product]
+    PL[Actual delivery<br/>lead times] --> SS[Safety stock]
+    L --> PP[Reorder point<br/>demand over the lead time<br/>plus safety stock]
     SS --> PP
-    ST[Stock plus what is on its way] --> C{At or below<br/>the reorder point?}
+    ST[Stock plus what<br/>is on its way] --> C{At or below<br/>the reorder point?}
     PP --> C
-    C -->|Yes| PE[Orders the fixed quantity]
+    C -->|Yes| PE[Orders the<br/>fixed quantity]
     C -->|No| NO[Does not order]
     style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
     style PE fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
