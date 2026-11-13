@@ -37,6 +37,20 @@ At the end of each day, the process calculates the reorder point of each product
 forecasts over the lead time plus the safety stock. It then compares it with the stock, counting what is already on its
 way. If the stock is at that point or below it, the process orders the product's fixed quantity.
 
+```mermaid
+flowchart TD
+    H[Sales history] --> L[Demand forecast<br/>one Lasso model per product]
+    PL[Actual delivery lead times] --> SS[Safety stock]
+    L --> PP[Reorder point<br/>demand over the lead time plus safety stock]
+    SS --> PP
+    ST[Stock plus what is on its way] --> C{At or below<br/>the reorder point?}
+    PP --> C
+    C -->|Yes| PE[Orders the fixed quantity]
+    C -->|No| NO[Does not order]
+    style C fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    style PE fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20
+```
+
 This was the decision for 26/02/2025 in the half-year simulation:
 
 <!-- ejemplo 2025-02-26 -->
