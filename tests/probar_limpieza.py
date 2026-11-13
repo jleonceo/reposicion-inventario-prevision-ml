@@ -74,6 +74,42 @@ def ficheros(carpeta):
     return salida
 
 
+def no_caben_en_consola(carpeta, codificacion="cp1252"):
+    """(fichero, línea, texto) de cada línea de código Python que la consola de Windows no puede imprimir.
+
+    En Windows la consola usa cp1252 si no se cambia, y un carácter que no está en ella (como «−» o «→») hace caer el
+    script al imprimirlo. Se mira el código, no los comentarios ni las cadenas de documentación, salvo la primera línea
+    del módulo, que es la ayuda que imprime `--help`.
+    """
+    salida = []
+    for f in ficheros(carpeta):
+        if f.suffix != ".py":
+            continue
+        en_doc, primera = False, True
+        for i, linea in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            limpia = linea.strip()
+            comillas = linea.count('"""')
+            if en_doc or comillas:
+                # La primera línea de la documentación del módulo sí se imprime
+                if primera and not en_doc and limpia.startswith('"""'):
+                    revisar = limpia
+                else:
+                    revisar = ""
+                if comillas % 2:
+                    en_doc = not en_doc
+                primera = False
+            elif limpia.startswith("#") or not limpia:
+                continue
+            else:
+                primera = False
+                revisar = re.split(r"\s#\s", linea)[0]
+            try:
+                revisar.encode(codificacion)
+            except UnicodeEncodeError:
+                salida.append((str(f.relative_to(carpeta)), i, limpia[:80]))
+    return salida
+
+
 def hallazgos(carpeta, patrones):
     """(fichero, línea, palabra) de cada aparición de un patrón en los ficheros de la carpeta."""
     # Cada aparición, con su sitio
@@ -110,6 +146,26 @@ def main():
               + ("" if ok else f" (sin ejemplo: {sueltos}; no cazan: {no_cazan})"))
         if not ok:
             fallos.append("canario")
+        # La consola: lo que se imprime con «→» se caza; tildes, eñes, comentarios y documentación no
+        (Path(tmp) / "canario.md").unlink()
+        (Path(tmp) / "malo.py").write_text('"""Uno."""\nprint("a → b")\n', encoding="utf-8")
+        (Path(tmp) / "bueno.py").write_text('"""Acción del año."""\n\n\ndef f():\n    """Diferencia a − b."""\n'
+                                            '    # media × plazo\n    print("señal, posición")\n',
+                                            encoding="utf-8")
+        cazados = no_caben_en_consola(tmp)
+        ok = [(f, i) for f, i, _ in cazados] == [("malo.py", 2)]
+        print(("OK    " if ok else "FALLA ") + "ROJO: la prueba de consola caza «→» al imprimir y deja pasar tildes, "
+              "comentarios y documentación" + ("" if ok else f" (da {cazados})"))
+        if not ok:
+            fallos.append("canario de consola")
+    # Lo que imprime el código cabe en la consola de Windows
+    h = no_caben_en_consola(carpeta)
+    print(("OK    " if not h else "FALLA ") + f"todo lo que imprime el código cabe en la consola de Windows: "
+          f"{len(h)} líneas que no")
+    for f, i, texto in h[:15]:
+        print(f"        {f}:{i}  {texto}")
+    if h:
+        fallos.append("consola")
     # El repositorio, limpio
     for nombre, patrones in (("origen", ORIGEN), ("nombres internos", INTERNOS), ("rutas de la máquina", RUTAS)):
         h = hallazgos(carpeta, patrones)

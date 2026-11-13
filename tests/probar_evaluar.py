@@ -66,7 +66,7 @@ with tempfile.TemporaryDirectory() as tmp:
     d = evaluar(FIN, escribir(tmp / "perdida", perdida, ped), cf)
     c.caso("ROJO: una venta perdida más suma un día sin stock en A",
            d["productos"]["Producto_A"]["dias_sin_stock"] == dias["Producto_A"] + 1)
-    c.caso("ROJO: y sube el coste en su margen, 50 × (12 − 7) = 250 €",
+    c.caso("ROJO: y sube el coste en su margen, 50 × (12 - 7) = 250 €",
            abs(d["coste_total_tres"] - base["coste_total_tres"] - 250) < 1e-6)
     lleno = inv.copy()
     sel = (lleno["producto"] == "Producto_C") & (lleno["fecha"] >= "2025-01-01")

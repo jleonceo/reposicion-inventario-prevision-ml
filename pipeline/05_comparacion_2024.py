@@ -181,8 +181,8 @@ def main():
         "segundos": round(time.perf_counter() - inicio, 1)})
     for p in productos:
         d = por_producto[p]["frente_a_la_actual"]
-        print(f"{p}: objetivo {objetivos[p]['nivel']} %; regla con previsión − actual: "
-              f"{d[PREVISION]['coste_total']['mediana']:.0f} €; corregida − actual: "
+        print(f"{p}: objetivo {objetivos[p]['nivel']} %; regla con previsión - actual: "
+              f"{d[PREVISION]['coste_total']['mediana']:.0f} €; corregida - actual: "
               f"{d[CORREGIDA]['coste_total']['mediana']:.0f} €")
 
 

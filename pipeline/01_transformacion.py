@@ -37,7 +37,7 @@ def main():
     redondeo = {p: int(np.floor(float(m) + 0.5)) for p, m in plazo_medio.items()}
     comprobaciones = {
         "calendario_sin_huecos": {"ok": bool(sin_huecos), "detalle": "cada producto, de día en día"},
-        "stock_cuadra": {"ok": bool(cuadre), "detalle": "stock inicial + recibido − ventas = stock final cada día"},
+        "stock_cuadra": {"ok": bool(cuadre), "detalle": "stock inicial + recibido - ventas = stock final cada día"},
         "un_pedido_por_dia": {"ok": bool(un_pedido), "detalle": "como mucho un pedido por producto y día"},
         "cantidad_de_la_ficha": {"ok": bool(cantidad), "detalle": "todos los pedidos con la cantidad fija"},
         "plazo_medio_redondeado": {"ok": redondeo == config.PLAZO_MEDIO,

@@ -91,5 +91,5 @@ if __name__ == "__main__":
     except EntradaIncorrecta as e:
         sys.exit(f"ERROR: la ejecución del {a.dia} se para: {e}")
     for f in d.itertuples(index=False):
-        print(f"{f.producto}: posición {f.posicion}, punto de pedido {f.punto_pedido:.1f} → "
+        print(f"{f.producto}: posición {f.posicion}, punto de pedido {f.punto_pedido:.1f} -> "
               f"{'PEDIR ' + str(f.cantidad) if f.pedir else 'no pedir'}")
