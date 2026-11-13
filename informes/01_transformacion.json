@@ -1,0 +1,76 @@
+{
+  "fecha_ejecucion": "2026-11-13T13:52:05",
+  "entorno": {
+    "python": "3.13.18",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "entradas": [
+    {
+      "ruta": "datos/inventario_diario.csv",
+      "sha256": "c3406856a62383a1a4ebf8bad4a5ddb0e3c5e7eabd18cda8a02a2d5bfb010ec5"
+    },
+    {
+      "ruta": "datos/pedidos.csv",
+      "sha256": "ab6b119a0f1f65765c497cf03010a8037a85237eeccbe5d2e60b9bf89098f9e6"
+    },
+    {
+      "ruta": "datos/productos.csv",
+      "sha256": "cdc96f08e50c2be0e58a11d51a89f9720c1ceaa29da7412180b56bb3ff651322"
+    }
+  ],
+  "filas": {
+    "inventario_dia": 2193,
+    "pedidos": 146
+  },
+  "desde": "2023-01-01",
+  "hasta": "2024-12-31",
+  "pedidos_por_producto": {
+    "Producto_A": 53,
+    "Producto_B": 52,
+    "Producto_C": 41
+  },
+  "plazo_real_medio": {
+    "Producto_A": 6.9423076923076925,
+    "Producto_B": 7.823529411764706,
+    "Producto_C": 11.658536585365853
+  },
+  "plazo_medio_fijado": {
+    "Producto_A": 7,
+    "Producto_B": 8,
+    "Producto_C": 12
+  },
+  "demanda_media_diaria": {
+    "Producto_A": 109.6922024623803,
+    "Producto_B": 73.92065663474692,
+    "Producto_C": 41.276333789329684
+  },
+  "dias_sin_stock": {
+    "Producto_A": 3,
+    "Producto_B": 37,
+    "Producto_C": 125
+  },
+  "comprobaciones": {
+    "calendario_sin_huecos": {
+      "ok": true,
+      "detalle": "cada producto, de día en día"
+    },
+    "stock_cuadra": {
+      "ok": true,
+      "detalle": "stock inicial + recibido − ventas = stock final cada día"
+    },
+    "un_pedido_por_dia": {
+      "ok": true,
+      "detalle": "como mucho un pedido por producto y día"
+    },
+    "cantidad_de_la_ficha": {
+      "ok": true,
+      "detalle": "todos los pedidos con la cantidad fija"
+    },
+    "plazo_medio_redondeado": {
+      "ok": true,
+      "detalle": "medido {'Producto_A': 6.94, 'Producto_B': 7.82, 'Producto_C': 11.66}; fijado {'Producto_A': 7, 'Producto_B': 8, 'Producto_C': 12}"
+    }
+  }
+}

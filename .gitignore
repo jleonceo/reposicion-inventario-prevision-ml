@@ -1,0 +1,14 @@
+# Se regeneran con ejecutar_todo.py y produccion/reentrenar.py
+salidas_pipeline/
+modelos/
+produccion/salidas/
+produccion/salidas_simulacion/
+modelos_simulacion/
+produccion/entrada/
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+# Entorno y credenciales
+.env
+.venv/

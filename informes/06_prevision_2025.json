@@ -1,0 +1,64 @@
+{
+  "fecha_ejecucion": "2026-11-13T13:52:37",
+  "entorno": {
+    "python": "3.13.18",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "reentrenado_con": "2023 y 2024",
+  "que": "error absoluto medio de la demanda de los días 1 al plazo medio, desde cada día de 2025 donde cabe",
+  "productos": {
+    "Producto_A": {
+      "filas_del_reentreno": 703,
+      "dias_previstos": 181,
+      "origenes_medidos": 174,
+      "mae": {
+        "modelo": 32.87356321839081,
+        "media de 30 días de lo vendido (regla actual)": 46.6080459770115,
+        "media de 30 días de la demanda": 41.76628352490422,
+        "demanda del mismo día de la semana anterior": 39.729885057471265
+      },
+      "mejor_referencia": "demanda del mismo día de la semana anterior",
+      "intervalo_95_diferencia": [
+        -17.354285714285716,
+        1.6706586826347305
+      ],
+      "se_da_por_bueno": false
+    },
+    "Producto_B": {
+      "filas_del_reentreno": 703,
+      "dias_previstos": 181,
+      "origenes_medidos": 173,
+      "mae": {
+        "modelo": 22.710982658959537,
+        "media de 30 días de lo vendido (regla actual)": 50.65857418111754,
+        "media de 30 días de la demanda": 34.6616570327553,
+        "demanda del mismo día de la semana anterior": 32.47976878612717
+      },
+      "mejor_referencia": "demanda del mismo día de la semana anterior",
+      "intervalo_95_diferencia": [
+        -14.651428571428571,
+        -4.320575177584844
+      ],
+      "se_da_por_bueno": true
+    },
+    "Producto_C": {
+      "filas_del_reentreno": 703,
+      "dias_previstos": 181,
+      "origenes_medidos": 169,
+      "mae": {
+        "modelo": 17.585798816568047,
+        "media de 30 días de lo vendido (regla actual)": 56.47573964497041,
+        "media de 30 días de la demanda": 30.669822485207117,
+        "demanda del mismo día de la semana anterior": 25.71005917159763
+      },
+      "mejor_referencia": "demanda del mismo día de la semana anterior",
+      "intervalo_95_diferencia": [
+        -13.457516339869281,
+        -2.8864864864864863
+      ],
+      "se_da_por_bueno": true
+    }
+  }
+}

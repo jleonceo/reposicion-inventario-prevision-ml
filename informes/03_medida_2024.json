@@ -1,0 +1,91 @@
+{
+  "fecha_ejecucion": "2026-11-13T13:52:10",
+  "entorno": {
+    "python": "3.13.18",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "que": "error absoluto medio de la demanda de los días 1 al plazo medio, desde cada día de 2024",
+  "modelo": {
+    "algoritmo": "lasso",
+    "hiperparametros": {
+      "alpha": 0.1
+    },
+    "ajustado_con": "los días de 2023"
+  },
+  "productos": {
+    "Producto_A": {
+      "plazo_medio": 7,
+      "plazo_maximo": 8,
+      "origenes": 359,
+      "desde": "2024-01-01",
+      "hasta": "2024-12-24",
+      "mae": {
+        "modelo": 31.908077994428968,
+        "media de 30 días de lo vendido (regla actual)": 42.38523676880222,
+        "media de 30 días de la demanda": 43.67548746518106,
+        "demanda del mismo día de la semana anterior": 43.67688022284123,
+        "media diaria de 2023": 99.79757316747433
+      },
+      "sesgo_modelo": 1.7910863509749304,
+      "mejor_referencia": "media de 30 días de lo vendido (regla actual)",
+      "diferencia_con_la_mejor": -10.477158774373255,
+      "intervalo_95_diferencia": [
+        -15.96413410944487,
+        -4.464901187359322
+      ],
+      "se_da_por_bueno": true,
+      "mejora_frente_a_la_mejor": 0.24718886983037924,
+      "coeficientes_distintos_de_cero": 26
+    },
+    "Producto_B": {
+      "plazo_medio": 8,
+      "plazo_maximo": 11,
+      "origenes": 358,
+      "desde": "2024-01-01",
+      "hasta": "2024-12-23",
+      "mae": {
+        "modelo": 25.636871508379887,
+        "media de 30 días de lo vendido (regla actual)": 39.89720670391062,
+        "media de 30 días de la demanda": 36.50949720670391,
+        "demanda del mismo día de la semana anterior": 37.92458100558659,
+        "media diaria de 2023": 79.87355934797581
+      },
+      "sesgo_modelo": 0.6871508379888268,
+      "mejor_referencia": "media de 30 días de la demanda",
+      "diferencia_con_la_mejor": -10.872625698324025,
+      "intervalo_95_diferencia": [
+        -16.298583166221036,
+        -5.287119532136595
+      ],
+      "se_da_por_bueno": true,
+      "mejora_frente_a_la_mejor": 0.2978026686252908,
+      "coeficientes_distintos_de_cero": 23
+    },
+    "Producto_C": {
+      "plazo_medio": 12,
+      "plazo_maximo": 21,
+      "origenes": 354,
+      "desde": "2024-01-01",
+      "hasta": "2024-12-19",
+      "mae": {
+        "modelo": 15.929378531073446,
+        "media de 30 días de lo vendido (regla actual)": 77.43672316384179,
+        "media de 30 días de la demanda": 29.759887005649713,
+        "demanda del mismo día de la semana anterior": 24.533898305084747,
+        "media diaria de 2023": 67.33499729123133
+      },
+      "sesgo_modelo": -1.4322033898305084,
+      "mejor_referencia": "demanda del mismo día de la semana anterior",
+      "diferencia_con_la_mejor": -8.604519774011301,
+      "intervalo_95_diferencia": [
+        -11.423859693223712,
+        -6.1839705713958555
+      ],
+      "se_da_por_bueno": true,
+      "mejora_frente_a_la_mejor": 0.35071963154864716,
+      "coeficientes_distintos_de_cero": 20
+    }
+  }
+}

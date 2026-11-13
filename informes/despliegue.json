@@ -1,0 +1,57 @@
+{
+  "forma": "proceso por lotes, una ejecución al cierre de cada día",
+  "configuracion": "produccion/config.json",
+  "programacion": "GitHub Actions: flujo produccion.yml, lanzado a mano (Run workflow)",
+  "avisos": {
+    "por_error": "la ejecución del día para sin dejar decisión, lo anota en el registro y el flujo falla, y GitHub avisa por correo a quien lo lanzó",
+    "por_ausencia": "si falta la decisión de algún día de la ventana, la simulación termina con error y el flujo también"
+  },
+  "vuelta_atras": {
+    "modelo": "python produccion/volver_atras.py",
+    "codigo": "git checkout <etiqueta>"
+  },
+  "modo": "la regla del sistema en todos los productos, con el plazo sorteado número 0",
+  "reglas": {
+    "Producto_A": "prevision",
+    "Producto_B": "prevision",
+    "Producto_C": "prevision"
+  },
+  "reentreno": null,
+  "modelo_en_uso": {
+    "entrenado_hasta": "2024-12-31",
+    "fecha": "2026-11-13T13:53:06"
+  },
+  "ventana": {
+    "desde": "2025-01-01",
+    "hasta": "2025-06-30",
+    "esperados": 181,
+    "hechos": 181,
+    "faltan": []
+  },
+  "final": {
+    "dia": "2025-06-30",
+    "pedidos_lanzados": "",
+    "dias_sin_stock": 3,
+    "unidades_no_servidas": 163,
+    "coste_acumulado": 9700.74
+  },
+  "prueba_de_principio_a_fin": {
+    "que": "el proceso día a día da lo mismo que el simulador de la prueba final con el sorteo 0",
+    "ok": true,
+    "por_producto": {
+      "Producto_A": {
+        "dias_iguales": 181,
+        "dias": 181
+      },
+      "Producto_B": {
+        "dias_iguales": 181,
+        "dias": 181
+      },
+      "Producto_C": {
+        "dias_iguales": 181,
+        "dias": 181
+      }
+    },
+    "resultado": "OK"
+  }
+}

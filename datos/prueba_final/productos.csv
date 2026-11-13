@@ -1,0 +1,4 @@
+producto,precio_venta,coste_unitario,coste_almacen_anual_pct,coste_pedido,lead_time_prometido,politica_stock_seguridad,politica_cantidad_pedido
+Producto_A,12.0,7.0,0.25,50.0,7,100,1500
+Producto_B,25.0,18.0,0.25,50.0,7,70,1000
+Producto_C,60.0,30.0,0.25,120.0,7,150,600

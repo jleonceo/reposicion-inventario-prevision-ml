@@ -1,0 +1,24 @@
+{
+  "_que_es": "Las cifras que tiene que dar el código, fijadas al publicar. Si una se sale de su tolerancia, probar_resultados.py dice cuál y cuánto.",
+  "tolerancia_euros": 1.0,
+  "tolerancia_relativa": 1e-6,
+  "medida_2024_error_modelo": {"Producto_A": 31.908077994428968, "Producto_B": 25.636871508379887, "Producto_C": 15.929378531073446},
+  "stock_de_seguridad_al_objetivo": {
+    "Producto_A": {"prevision": 131.0, "corregida": 140.73333333333335},
+    "Producto_B": {"prevision": 205.27999999999884, "corregida": 209.17866666666626},
+    "Producto_C": {"prevision": 422.0, "corregida": 437.20000000000005}
+  },
+  "stock_de_seguridad_oscilacion_media_al_objetivo": {"Producto_A": 154.0816029143898, "Producto_B": 117.7028051001821, "Producto_C": 118.38060109289626},
+  "stock_de_seguridad_formula_manual_a_su_objetivo": {"Producto_A": 212.12893320596305, "Producto_B": 250.0633473595882, "Producto_C": 441.3304880220268},
+  "prevision_2025_error_modelo": {"Producto_A": 32.87356321839081, "Producto_B": 22.710982658959537, "Producto_C": 17.585798816568047},
+  "eleccion_por_producto": {"Producto_A": "actual", "Producto_B": "corregida", "Producto_C": "prevision"},
+  "regla_del_sistema": "prevision",
+  "veredicto_del_sistema_frente_a_la_actual": {"Producto_A": "no buena", "Producto_B": "buena", "Producto_C": "buena"},
+  "coste_real_semestre": 40707.48150684932,
+  "sistema_menos_coste_real_mediana": -31367.39863013699,
+  "sistema_menos_actual_mediana": -47373.82534246576,
+  "sistema_menos_actual_p5": -83090.38726027397,
+  "sistema_menos_actual_p95": -19817.970719178094,
+  "stock_de_mas_euros_mediana": 17444.32044198895,
+  "fill_rate_puntos_mediana": 0.04809456979380328
+}

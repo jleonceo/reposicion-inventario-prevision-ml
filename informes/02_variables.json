@@ -1,0 +1,75 @@
+{
+  "fecha_ejecucion": "2026-11-13T13:52:08",
+  "entorno": {
+    "python": "3.13.18",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "variables": [
+    "dia_semana",
+    "mes",
+    "dem_lag_1",
+    "dem_lag_2",
+    "dem_lag_3",
+    "dem_lag_4",
+    "dem_lag_5",
+    "dem_lag_6",
+    "dem_lag_7",
+    "dem_lag_8",
+    "dem_lag_9",
+    "dem_lag_10",
+    "dem_lag_11",
+    "dem_lag_12",
+    "dem_lag_13",
+    "dem_lag_14",
+    "dem_lag_15",
+    "dem_lag_16",
+    "dem_lag_17",
+    "dem_lag_18",
+    "dem_lag_19",
+    "dem_lag_20",
+    "dem_lag_21",
+    "dem_lag_22",
+    "dem_lag_23",
+    "dem_lag_24",
+    "dem_lag_25",
+    "dem_lag_26",
+    "dem_lag_27",
+    "dem_lag_28",
+    "dem_media_7",
+    "dem_media_28"
+  ],
+  "filas_por_producto_y_anio": {
+    "Producto_A": {
+      "2023": 337,
+      "2024": 366
+    },
+    "Producto_B": {
+      "2023": 337,
+      "2024": 366
+    },
+    "Producto_C": {
+      "2023": 337,
+      "2024": 366
+    }
+  },
+  "reparto": {
+    "ajuste": 2023,
+    "medida": 2024
+  },
+  "comprobaciones": {
+    "retardos_sin_el_dia_previsto": {
+      "ok": true,
+      "detalle": "retardos distintos: 0"
+    },
+    "medias_de_sus_retardos": {
+      "ok": true,
+      "detalle": "medias distintas: {7: 0, 28: 0}"
+    },
+    "filas_por_anio": {
+      "ok": true,
+      "detalle": "filas por producto y año: {2023: {'Producto_A': 337, 'Producto_B': 337, 'Producto_C': 337}, 2024: {'Producto_A': 366, 'Producto_B': 366, 'Producto_C': 366}}"
+    }
+  }
+}

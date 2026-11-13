@@ -1,0 +1,23 @@
+name: pruebas
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    # Sistema fijado para que un cambio de GitHub en ubuntu-latest no mueva las cifras sin avisar
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+      - name: Reproducir el proyecto y comprobar las cifras
+        run: python ejecutar_todo.py --rapido
